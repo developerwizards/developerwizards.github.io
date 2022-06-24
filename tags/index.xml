@@ -3,5 +3,22 @@
         <title>Tags - Tag - Amardeep&#39;s Blog</title>
         <link>https://thedevwizard.github.io/tags/</link>
         <description>Tags - Tag - Amardeep&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://thedevwizard.github.io/tags/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><managingEditor>amardeepg35@gmail.com (Amardeep Gupta)</managingEditor>
+            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</lastBuildDate><atom:link href="https://thedevwizard.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Python</title>
+    <link>https://thedevwizard.github.io/tags/python/</link>
+    <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
+    <author>Amardeep Gupta</author>
+    <guid>https://thedevwizard.github.io/tags/python/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Spark</title>
+    <link>https://thedevwizard.github.io/tags/spark/</link>
+    <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
+    <author>Amardeep Gupta</author>
+    <guid>https://thedevwizard.github.io/tags/spark/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
