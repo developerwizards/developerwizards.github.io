@@ -10,9 +10,8 @@
     <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
     <author>Amardeep Gupta</author>
     <guid>https://thedevwizard.github.io/mypost/</guid>
-    <description><![CDATA[In Python, we can implement a matrix as a nested list (list inside a list). We can treat each element as a row of the matrix.
-For example X = [[1, 2], [4, 5], [3, 6]] would represent a 3x2 matrix. The first row can be selected as X[0]. And, the element in the first-row first column can be selected as X[0][0].
-Transpose of a matrix is the interchanging of rows and columns.]]></description>
+    <description><![CDATA[NoteThis is dump blog, will soon start writting real ones.In Python, we can implement a matrix as a nested list (list inside a list). We can treat each element as a row of the matrix.
+For example X = [[1, 2], [4, 5], [3, 6]] would represent a 3x2 matrix. The first row can be selected as X[0]. And, the element in the first-row first column can be selected as X[0][0].]]></description>
 </item>
 </channel>
 </rss>
