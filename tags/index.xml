@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - Amardeep&#39;s Blog</title>
-        <link>https://thedevwizard.github.io/tags/</link>
+        <link>https://developerwizards.github.io/tags/</link>
         <description>Tags - Tag - Amardeep&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>amardeepg35@gmail.com (Amardeep Gupta)</managingEditor>
-            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</lastBuildDate><atom:link href="https://thedevwizard.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</lastBuildDate><atom:link href="https://developerwizards.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Python</title>
-    <link>https://thedevwizard.github.io/tags/python/</link>
+    <link>https://developerwizards.github.io/tags/python/</link>
     <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
     <author>Amardeep Gupta</author>
-    <guid>https://thedevwizard.github.io/tags/python/</guid>
+    <guid>https://developerwizards.github.io/tags/python/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Spark</title>
-    <link>https://thedevwizard.github.io/tags/spark/</link>
+    <link>https://developerwizards.github.io/tags/spark/</link>
     <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
     <author>Amardeep Gupta</author>
-    <guid>https://thedevwizard.github.io/tags/spark/</guid>
+    <guid>https://developerwizards.github.io/tags/spark/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
