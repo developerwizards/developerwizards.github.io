@@ -13,7 +13,7 @@
     <author>Amardeep Gupta</author>
     <guid>https://www.thedevwizard.in/dsa-python-introduction/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/DSA.png" referrerpolicy="no-referrer">
+                <img src="/images/DSA.svg" referrerpolicy="no-referrer">
             </div>Introduction to Data Structures and Algorithms (DSA) As a data engineer, you&rsquo;re likely familiar with handling vast amounts of data, optimizing workflows, and building efficient data pipelines. But a solid understanding of Data Structures and Algorithms (DSA) can take your skills to the next level, equipping you with the tools to build more performant systems, optimize resource usage, and make data processing more efficient.
 Data Structures and Algorithms aren’t just theoretical concepts — they’re the backbone of efficient problem-solving and critical for scalable, optimized solutions in real-world applications.]]></description>
 </item>
