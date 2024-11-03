@@ -2,6 +2,12 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.thedevwizard.in/</loc></url><url>
-            <loc>https://www.thedevwizard.in/categories/</loc></url><url>
-            <loc>https://www.thedevwizard.in/tags/</loc></url></urlset>
+            <loc>https://www.thedevwizard.in/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/categories/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/tags/dsa/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/categories/dsa/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/dsa-python-introduction/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/posts/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/tags/python/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/categories/python/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url><url>
+            <loc>https://www.thedevwizard.in/tags/</loc><lastmod>2024-11-03T21:16:11&#43;05:30</lastmod></url></urlset>

@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Python - Tag - Amardeep&#39;s Blog</title>
-        <link>https://www.thedevwizard.in/tags/python/</link>
-        <description>Python - Tag - Amardeep&#39;s Blog</description>
+        <title>Python - Category - Amardeep&#39;s Blog</title>
+        <link>https://www.thedevwizard.in/categories/python/</link>
+        <description>Python - Category - Amardeep&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>amardeepg35@gmail.com (Amardeep Gupta)</managingEditor>
-            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</lastBuildDate><atom:link href="https://www.thedevwizard.in/tags/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</lastBuildDate><atom:link href="https://www.thedevwizard.in/categories/python/" rel="self" type="application/rss+xml" /><item>
     <title>Introduction to DSA</title>
     <link>https://www.thedevwizard.in/dsa-python-introduction/</link>
     <pubDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</pubDate>

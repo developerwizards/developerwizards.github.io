@@ -4,5 +4,21 @@
         <link>https://www.thedevwizard.in/categories/</link>
         <description>Categories - Category - Amardeep&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>amardeepg35@gmail.com (Amardeep Gupta)</managingEditor>
-            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><atom:link href="https://www.thedevwizard.in/categories/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</lastBuildDate><atom:link href="https://www.thedevwizard.in/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>DSA</title>
+    <link>https://www.thedevwizard.in/categories/dsa/</link>
+    <pubDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</pubDate>
+    <author>Amardeep Gupta</author>
+    <guid>https://www.thedevwizard.in/categories/dsa/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Python</title>
+    <link>https://www.thedevwizard.in/categories/python/</link>
+    <pubDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</pubDate>
+    <author>Amardeep Gupta</author>
+    <guid>https://www.thedevwizard.in/categories/python/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

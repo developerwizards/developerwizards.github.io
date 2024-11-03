@@ -4,26 +4,16 @@
         <link>https://www.thedevwizard.in/posts/</link>
         <description>All Posts | Amardeep&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>amardeepg35@gmail.com (Amardeep Gupta)</managingEditor>
-            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</lastBuildDate><atom:link href="https://www.thedevwizard.in/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Hadoop Architecture</title>
-    <link>https://www.thedevwizard.in/spark-architecture/</link>
-    <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
+            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</lastBuildDate><atom:link href="https://www.thedevwizard.in/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Introduction to DSA</title>
+    <link>https://www.thedevwizard.in/dsa-python-introduction/</link>
+    <pubDate>Sun, 03 Nov 2024 21:16:11 &#43;0530</pubDate>
     <author>Amardeep Gupta</author>
-    <guid>https://www.thedevwizard.in/spark-architecture/</guid>
+    <guid>https://www.thedevwizard.in/dsa-python-introduction/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/Spark%20Architecture.png" referrerpolicy="no-referrer">
-            </div>What is apache spark? Apache Spark features Spark Architecture ]]></description>
-</item>
-<item>
-    <title>Spark Architecture</title>
-    <link>https://www.thedevwizard.in/mypost/</link>
-    <pubDate>Sat, 04 Jun 2022 16:37:11 &#43;0530</pubDate>
-    <author>Amardeep Gupta</author>
-    <guid>https://www.thedevwizard.in/mypost/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/Spark%20Architecture.png" referrerpolicy="no-referrer">
-            </div>NoteThis is dump blog, will soon start writing real ones.Intro In Python, we can implement a matrix as a nested list (list inside a list). We can treat each element as a row of the matrix.
-For example X = [[1, 2], [4, 5], [3, 6]] would represent a 3x2 matrix. The first row can be selected as X[0]. And, the element in the first-row first column can be selected as X[0][0].]]></description>
+                <img src="/images/DSA.png" referrerpolicy="no-referrer">
+            </div>Introduction to Data Structures and Algorithms (DSA) As a data engineer, you&rsquo;re likely familiar with handling vast amounts of data, optimizing workflows, and building efficient data pipelines. But a solid understanding of Data Structures and Algorithms (DSA) can take your skills to the next level, equipping you with the tools to build more performant systems, optimize resource usage, and make data processing more efficient.
+Data Structures and Algorithms aren’t just theoretical concepts — they’re the backbone of efficient problem-solving and critical for scalable, optimized solutions in real-world applications.]]></description>
 </item>
 </channel>
 </rss>
