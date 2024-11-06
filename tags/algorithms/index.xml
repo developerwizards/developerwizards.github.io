@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Algorithms - Tag - Amardeep&#39;s Blog</title>
+        <link>https://www.thedevwizard.in/tags/algorithms/</link>
+        <description>Algorithms - Tag - Amardeep&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><managingEditor>amardeepg35@gmail.com (Amardeep Gupta)</managingEditor>
+            <webMaster>amardeepg35@gmail.com (Amardeep Gupta)</webMaster><lastBuildDate>Wed, 06 Nov 2024 09:19:33 &#43;0530</lastBuildDate><atom:link href="https://www.thedevwizard.in/tags/algorithms/" rel="self" type="application/rss+xml" /><item>
+    <title>Understanding Big O Notation: A Beginner’s Guide</title>
+    <link>https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/</link>
+    <pubDate>Wed, 06 Nov 2024 09:19:33 &#43;0530</pubDate>
+    <author>Amardeep Gupta</author>
+    <guid>https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/aoa_prod.png" referrerpolicy="no-referrer">
+            </div>Introduction to Big O Notation When analyzing the efficiency of algorithms, it&rsquo;s crucial to understand how well they scale with larger input sizes. That&rsquo;s where Big O Notation comes into play. Big O Notation provides a way to express an algorithm&rsquo;s time complexity, allowing us to compare different algorithms based on how they perform as inputs grow. In this blog, we&rsquo;ll explore Big O, its importance, and examples of common complexities.]]></description>
+</item>
+</channel>
+</rss>

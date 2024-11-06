@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Understanding Big O Notation: A Beginner’s Guide - Amardeep&#39;s Blog</title><meta name="Description" content="A beginner-friendly guide to Analysis of Algorithm using Big O Notation"><meta property="og:title" content="Understanding Big O Notation: A Beginner’s Guide" />
+<meta property="og:description" content="A beginner-friendly guide to Analysis of Algorithm using Big O Notation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-11-06T09:19:33+05:30" />
+<meta property="article:modified_time" content="2024-11-06T09:19:33+05:30" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Understanding Big O Notation: A Beginner’s Guide"/>
+<meta name="twitter:description" content="A beginner-friendly guide to Analysis of Algorithm using Big O Notation"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/" /><link rel="prev" href="https://www.thedevwizard.in/intro-to-dsa-using-python/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Understanding Big O Notation: A Beginner’s Guide",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.thedevwizard.in\/analysis-of-algorithms-big-o-notations\/"
+        },"genre": "posts","keywords": "DSA, Python, Big O Notation, Analysis of Algorithms, Algorithms, Data Structures","wordcount":  1123 ,
+        "url": "https:\/\/www.thedevwizard.in\/analysis-of-algorithms-big-o-notations\/","datePublished": "2024-11-06T09:19:33+05:30","dateModified": "2024-11-06T09:19:33+05:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Amardeep Gupta"
+            },"description": "A beginner-friendly guide to Analysis of Algorithm using Big O Notation"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Amardeep&#39;s Blog"><span id="id-7" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Amardeep&#39;s Blog"><span id="id-8" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Understanding Big O Notation: A Beginner’s Guide</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="mailto:amardeepg35@gmail.com" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Amardeep Gupta</a></span>&nbsp;<span class="post-category">included in <a href="/categories/dsa/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>DSA</a>&nbsp;<a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-11-06">2024-11-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1123 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/aoa_prod.png"
+        data-srcset="/images/aoa_prod.png, /images/aoa_prod.png 1.5x, /images/aoa_prod.png 2x"
+        data-sizes="auto"
+        alt="/images/aoa_prod.png"
+        title="A beginner-friendly guide to Analysis of Algorithm using Big O Notation" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-big-o-notation">Why Big O Notation?</a></li>
+    <li><a href="#key-terms-to-know">Key Terms to Know</a></li>
+    <li><a href="#big-o-complexity-classes">Big O Complexity Classes</a></li>
+    <li><a href="#comparing-different-time-complexities-through-visualization">Comparing Different Time Complexities Through Visualization</a></li>
+    <li><a href="#why-is-big-o-important">Why Is Big O Important?</a></li>
+    <li><a href="#tips-for-improving-algorithm-efficiency">Tips for Improving Algorithm Efficiency</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="introduction-to-big-o-notation">Introduction to Big O Notation</h1>
+<p>When analyzing the efficiency of algorithms, it&rsquo;s crucial to understand how well they scale with larger input sizes. That&rsquo;s where Big O Notation comes into play. Big O Notation provides a way to express an algorithm&rsquo;s time complexity, allowing us to compare different algorithms based on how they perform as inputs grow. In this blog, we&rsquo;ll explore Big O, its importance, and examples of common complexities.</p>
+<h2 id="why-big-o-notation">Why Big O Notation?</h2>
+<p>Imagine you have two algorithms that perform the same task, but one is noticeably faster than the other for large inputs. <strong>Big O Notation</strong> helps us understand why. It gives us a mathematical way to analyze an algorithm&rsquo;s performance by focusing on the most significant factors that impact execution time. Rather than focusing on exact execution time, Big O looks at <em>how</em> performance scales as inputs grow.</p>
+<h2 id="key-terms-to-know">Key Terms to Know</h2>
+<ul>
+<li><strong>n:</strong> Input size</li>
+<li><strong>Time Complexity:</strong> Measures how the time needed by an algorithm grows as the input size increases.</li>
+<li><strong>Space Complexity</strong>: Measures how much memory an algorithm requires relative to the input size.</li>
+</ul>
+<h2 id="big-o-complexity-classes">Big O Complexity Classes</h2>
+<p>Here’s a look at some common Big O classes and what they mean in terms of performance:</p>
+<ol>
+<li>
+<p><strong>O(1) - Constant Time Complexity</strong></p>
+<ul>
+<li>
+<p><strong>Definition</strong></p>
+<p>The algorithm takes the same amount of time regardless of the input size.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>Accessing an element in an array by its index, which takes the same time regardless of array size.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_first_element</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>The function above accesses the first element in a list. Regardless of how large the list grows, accessing the first element takes the same amount of time. Thus, it has a constant time complexity, <strong>O(1)</strong>.</p>
+</li>
+</ul>
+<div class="echarts" id="id-1" style="width: 100%; height: 30rem;"></div>
+</li>
+<li>
+<p><strong>O(log n) - Logarithmic Time Complexity</strong></p>
+<ul>
+<li>
+<p><strong>Definition</strong></p>
+<p>In <strong>O(log n)</strong> complexity, the time required to run the algorithm increases logarithmically with the size of the input. This means that as the input size grows, the time taken increases slowly, in steps proportional to the logarithmic base (often base 2 for binary operations).</p>
+<p>Typically, if the algorithm reduces the problem size by half with each step, the base is 2 (resulting in <strong>log₂(n)</strong> complexity), as seen in binary search.</p>
+<p>However, if an algorithm divides the problem into <strong>k</strong> parts at each step, the base of the logarithm will be <strong>k</strong> i.e. <strong>O(logₖn)</strong>. For example, if an algorithm splits the problem into <strong>three</strong> parts each time, the complexity would be <strong>O(log₃ n)</strong>.</p>
+<p>Logarithmic time complexity is highly efficient for large inputs because the time required grows very slowly, making these algorithms ideal for cases where the problem size can be repeatedly reduced by a constant factor.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>Performing a binary search on a sorted array, where the array is halved in each step.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">mid</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>The binary search algorithm divides the list in half on each iteration, reducing the search space exponentially. This results in a logarithmic time complexity, <strong>O(log₂n)</strong>.</p>
+</li>
+</ul>
+<div class="echarts" id="id-2" style="width: 100%; height: 30rem;"></div>
+</li>
+<li>
+<p><strong>O(n) - Linear Time Complexity</strong></p>
+<ul>
+<li>
+<p><strong>Definition</strong></p>
+<p>The execution time grows proportionally with the input size.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>Finding the maximum element in an array by iterating through each item once.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">find_max</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_value</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">max_value</span> <span class="o">=</span> <span class="n">num</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max_value</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>If you double the size of the array, the algorithm will take twice as long.</p>
+</li>
+</ul>
+<div class="echarts" id="id-3" style="width: 100%; height: 30rem;"></div>
+</li>
+<li>
+<p><strong>O(n log n) - Log-Linear Time Complexity</strong></p>
+<ul>
+<li>
+<p><strong>Definition</strong></p>
+<p>A combination of linear and logarithmic growth, typically seen in efficient sorting algorithms.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>Sorting an array using Merge Sort, where the array is split and merged recursively.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">arr</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">left</span> <span class="ow">and</span> <span class="n">right</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">right</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">left</span> <span class="ow">or</span> <span class="n">right</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>Sorting algorithms like merge sort break the input into smaller parts (log n times) and then recombine (n operations). Hence, O(n log n) complexity results from n operations done log n times.</p>
+</li>
+</ul>
+<div class="echarts" id="id-4" style="width: 100%; height: 30rem;"></div>
+</li>
+<li>
+<p><strong>O(n^2) - Quadratic Time Complexity</strong></p>
+<ul>
+<li>
+<p><strong>Definition</strong></p>
+<p>Execution time grows proportionally to the square of the input size, often due to nested loops.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>Sorting an array using Bubble Sort, where every element is compared with others in nested loops.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">arr</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>Nested loops where each element is compared with every other element create this complexity, leading to quick growth with input size.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>O(2^n) - Exponential Time Complexity</strong></p>
+<ul>
+<li>
+<p><strong>Definition</strong></p>
+<p>Execution time doubles with each additional input, making it impractical for large inputs.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>The <code>fibonacci(n)</code> function recursively calculates the nth Fibonacci number by summing the two preceding Fibonacci numbers, with the <strong>base case</strong> returning <code>n</code> when <code>n</code> is <strong>0</strong> or <strong>1</strong>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>Explanation</strong></p>
+<p>Recursive algorithms where the number of operations grows exponentially with n lead to this complexity. For fibonacci, each function call branches out into two more calls, doubling work at each step.</p>
+</li>
+</ul>
+<div class="echarts" id="id-5" style="width: 100%; height: 30rem;"></div>
+</li>
+</ol>
+<h2 id="comparing-different-time-complexities-through-visualization">Comparing Different Time Complexities Through Visualization</h2>
+<p>To better understand Big O, let’s look at a hypothetical chart of how these different complexities grow as input size (n) increases.</p>
+<div class="echarts" id="id-6" style="width: 100%; height: 30rem;"></div>
+<h2 id="why-is-big-o-important">Why Is Big O Important?</h2>
+<p>Big O Notation helps us:</p>
+<ul>
+<li>Predict Performance: By analyzing time complexity, we can predict how well an algorithm will perform as input size increases.</li>
+<li>Make Informed Choices: Understanding complexity allows us to choose algorithms that balance performance with resource constraints.</li>
+<li>Optimize Code: Big O encourages us to think about efficiency when coding, often leading to more efficient solutions.</li>
+</ul>
+<h2 id="tips-for-improving-algorithm-efficiency">Tips for Improving Algorithm Efficiency</h2>
+<ol>
+<li><strong>Choose Appropriate Data Structures:</strong> Selecting efficient data structures like dictionaries and sets can significantly improve performance.</li>
+<li><strong>Minimize Nested Loops:</strong> Avoid unnecessary nested loops, as they often lead to O(n^2) complexity.</li>
+<li><strong>Consider Recursive Alternatives:</strong> Recursive solutions can sometimes improve readability and performance for complex problems.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Big O Notation is essential for understanding and improving the efficiency of algorithms. By learning common Big O classes, we can better predict performance, make informed choices, and optimize our code.</p>
+<hr>
+<p>In the next blog, we’ll delve into the essential mathematical concepts for Algorithmic Thinking, building a strong foundation to tackle complex algorithms with ease. See you there!</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-11-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/" data-title="Understanding Big O Notation: A Beginner’s Guide" data-via="amardeepg35" data-hashtags="DSA,Python,Big O Notation,Analysis of Algorithms,Algorithms,Data Structures"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/" data-hashtag="DSA"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/" data-title="Understanding Big O Notation: A Beginner’s Guide" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://www.thedevwizard.in/analysis-of-algorithms-big-o-notations/" data-title="Understanding Big O Notation: A Beginner’s Guide"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/dsa/">DSA</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/big-o-notation/">Big O Notation</a>,&nbsp;<a href="/tags/analysis-of-algorithms/">Analysis of Algorithms</a>,&nbsp;<a href="/tags/algorithms/">Algorithms</a>,&nbsp;<a href="/tags/data-structures/">Data Structures</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/intro-to-dsa-using-python/" class="prev" rel="prev" title="Introduction to DSA"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Introduction to DSA</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="mailto:amardeepg35@gmail.com" target="_blank">Amardeep Gupta</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/contrib/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://www-thedevwizard-in.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/echarts/echarts.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"{\"grid\":{\"bottom\":\"5%\",\"containLabel\":true,\"left\":\"5%\",\"right\":\"5%\",\"top\":\"20%\"},\"legend\":{\"data\":[\"O(1) Time Complexity\"],\"top\":\"10%\"},\"series\":[{\"data\":[0,1,1,1,1,1,1,1,1,1,1],\"lineStyle\":{\"color\":\"#ff9800\"},\"name\":\"Time Complexity\",\"symbol\":\"circle\",\"type\":\"line\"}],\"title\":{\"left\":\"center\",\"text\":\"O(1) - Constant Time Complexity Curve\",\"top\":\"2%\"},\"tooltip\":{\"trigger\":\"axis\"},\"xAxis\":{\"boundaryGap\":false,\"data\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"name\":\"Input Size (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"type\":\"category\"},\"yAxis\":{\"interval\":1,\"max\":4,\"min\":0,\"name\":\"Time (1)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"nameRotate\":90,\"type\":\"value\"}}","id-2":"{\"grid\":{\"bottom\":\"5%\",\"containLabel\":true,\"left\":\"5%\",\"right\":\"5%\",\"top\":\"20%\"},\"legend\":{\"data\":[\"O(log n)\"],\"top\":\"10%\"},\"series\":[{\"data\":[0,0.3,0.48,0.6,0.7,0.78,0.84,0.9,0.95,1],\"lineStyle\":{\"color\":\"#ff9800\"},\"name\":\"O(log n)\",\"symbol\":\"circle\",\"type\":\"line\"}],\"title\":{\"left\":\"center\",\"text\":\"O(log n) - Logarithmic Time Complexity Curve\",\"top\":\"2%\"},\"tooltip\":{\"trigger\":\"axis\"},\"xAxis\":{\"boundaryGap\":false,\"data\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"name\":\"Input Size (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"type\":\"category\"},\"yAxis\":{\"interval\":0.5,\"max\":2,\"min\":0,\"name\":\"Time (log n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"nameRotate\":90,\"type\":\"value\"}}","id-3":"{\"grid\":{\"bottom\":\"5%\",\"containLabel\":true,\"left\":\"5%\",\"right\":\"5%\",\"top\":\"20%\"},\"legend\":{\"data\":[\"O(n)\"],\"top\":\"10%\"},\"series\":[{\"data\":[0,1,2,3,4,5,6,7,8,9],\"lineStyle\":{\"color\":\"#ff9800\"},\"name\":\"O(n)\",\"symbol\":\"circle\",\"type\":\"line\"}],\"title\":{\"left\":\"center\",\"text\":\"O(n) - Linear Time Complexity\",\"top\":\"2%\"},\"tooltip\":{\"trigger\":\"axis\"},\"xAxis\":{\"boundaryGap\":false,\"data\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"name\":\"Input Size (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"type\":\"category\"},\"yAxis\":{\"interval\":1,\"max\":10,\"min\":0,\"name\":\"Time (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"nameRotate\":90,\"type\":\"value\"}}","id-4":"{\"grid\":{\"bottom\":\"5%\",\"containLabel\":true,\"left\":\"5%\",\"right\":\"5%\",\"top\":\"20%\"},\"legend\":{\"data\":[\"O(n log n)\"],\"top\":\"10%\"},\"series\":[{\"data\":[0,1,3,6,10,15,21,28,36,45],\"lineStyle\":{\"color\":\"#ff9800\"},\"name\":\"O(n log n)\",\"symbol\":\"circle\",\"type\":\"line\"}],\"title\":{\"left\":\"center\",\"text\":\"O(n log n) - Log-Linear Time Complexity\",\"top\":\"2%\"},\"tooltip\":{\"trigger\":\"axis\"},\"xAxis\":{\"boundaryGap\":false,\"data\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"name\":\"Input Size (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"type\":\"category\"},\"yAxis\":{\"interval\":5,\"max\":30,\"min\":0,\"name\":\"Time (n log n)\",\"nameGap\":30,\"nameLocation\":\"middle\",\"nameRotate\":90,\"type\":\"value\"}}","id-5":"{\"grid\":{\"bottom\":\"5%\",\"containLabel\":true,\"left\":\"5%\",\"right\":\"5%\",\"top\":\"20%\"},\"legend\":{\"data\":[\"O(n^2)\"],\"top\":\"10%\"},\"series\":[{\"data\":[0,1,4,9,16,25,36,49,64,81],\"lineStyle\":{\"color\":\"#ff9800\"},\"name\":\"O(n^2)\",\"symbol\":\"circle\",\"type\":\"line\"}],\"title\":{\"left\":\"center\",\"text\":\"O(n^2) - Quadratic Time Complexity\",\"top\":\"2%\"},\"tooltip\":{\"trigger\":\"axis\"},\"xAxis\":{\"boundaryGap\":false,\"data\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"name\":\"Input Size (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"type\":\"category\"},\"yAxis\":{\"interval\":10,\"max\":100,\"min\":0,\"name\":\"Time (n^2)\",\"nameGap\":30,\"nameLocation\":\"middle\",\"nameRotate\":90,\"type\":\"value\"}}","id-6":"{\"dataZoom\":{\"end\":100,\"start\":0,\"type\":\"inside\",\"xAxisIndex\":[0],\"yAxisIndex\":[0]},\"grid\":{\"bottom\":\"5%\",\"containLabel\":true,\"left\":\"5%\",\"right\":\"5%\",\"top\":\"20%\"},\"legend\":{\"data\":[\"O(1)\",\"O(log n)\",\"O(n)\",\"O(n log n)\",\"O(n²)\",\"O(2^n)\"],\"top\":\"10%\"},\"series\":[{\"data\":[1,1,1,1,1,1,1,1,1,1,1],\"lineStyle\":{\"color\":\"#00bcd4\"},\"name\":\"O(1)\",\"symbol\":\"circle\",\"type\":\"line\"},{\"data\":[0,0,0.63,1.26,1.61,1.91,2.21,2.49,2.81,3.02,3.32],\"lineStyle\":{\"color\":\"#ff9800\"},\"name\":\"O(log n)\",\"symbol\":\"circle\",\"type\":\"line\"},{\"data\":[0,1,2,3,4,5,6,7,8,9,10],\"lineStyle\":{\"color\":\"#4caf50\"},\"name\":\"O(n)\",\"symbol\":\"circle\",\"type\":\"line\"},{\"data\":[0,0,1.26,3.79,6.44,9.55,12.85,16.21,19.67,23.19,26.52],\"lineStyle\":{\"color\":\"#2196f3\"},\"name\":\"O(n log n)\",\"symbol\":\"circle\",\"type\":\"line\"},{\"data\":[0,1,4,9,16,25,36,49,64,81,100],\"lineStyle\":{\"color\":\"#f44336\"},\"name\":\"O(n²)\",\"symbol\":\"circle\",\"type\":\"line\"},{\"data\":[1,2,4,8,16,32,64,128,256],\"lineStyle\":{\"color\":\"#9c27b0\"},\"name\":\"O(2^n)\",\"symbol\":\"circle\",\"type\":\"line\"}],\"title\":{\"left\":\"center\",\"text\":\"Time Complexity Comparison\",\"top\":\"2%\"},\"tooltip\":{\"trigger\":\"axis\"},\"xAxis\":{\"boundaryGap\":false,\"data\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\"name\":\"Input Size (n)\",\"nameGap\":20,\"nameLocation\":\"middle\",\"type\":\"category\"},\"yAxis\":{\"interval\":25,\"max\":256,\"min\":0,\"name\":\"Time\",\"nameGap\":30,\"nameLocation\":\"middle\",\"nameRotate\":90,\"type\":\"value\"}}","id-7":"TheDevWizard","id-8":"TheDevWizard"},"echarts":{"darkTheme":{"backgroundColor":"rgba(41,52,65,1)","bar":{"itemStyle":{"barBorderColor":"#ccc","barBorderWidth":0}},"boxplot":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"candlestick":{"itemStyle":{"borderColor":"#fc97af","borderColor0":"#87f7cf","borderWidth":1,"color":"#fc97af","color0":"transparent"}},"categoryAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":false},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":false}},"color":["#fc97af","#87f7cf","#f7f494","#72ccff","#f7c5a0","#d4a4eb","#d2f5a6","#76f2f2"],"dataZoom":{"backgroundColor":"rgba(255,255,255,0)","dataBackgroundColor":"rgba(114,204,255,1)","fillerColor":"rgba(114,204,255,0.2)","handleColor":"#72ccff","handleSize":"100%","textStyle":{"color":"#333333"}},"funnel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"gauge":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"geo":{"emphasis":{"itemStyle":{"areaColor":"rgba(255,178,72,1)","borderColor":"#eb8146","borderWidth":1},"label":{"color":"rgb(137,52,72)"}},"itemStyle":{"areaColor":"#f3f3f3","borderColor":"#999999","borderWidth":0.5},"label":{"color":"#893448"}},"graph":{"color":["#fc97af","#87f7cf","#f7f494","#72ccff","#f7c5a0","#d4a4eb","#d2f5a6","#76f2f2"],"itemStyle":{"borderColor":"#ccc","borderWidth":0},"label":{"color":"#293441"},"lineStyle":{"color":"#ffffff","width":1},"smooth":true,"symbol":"emptyCircle","symbolSize":3},"legend":{"textStyle":{"color":"#999999"}},"line":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"circle","symbolSize":6},"logAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":true},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":true}},"map":{"emphasis":{"itemStyle":{"areaColor":"rgba(255,178,72,1)","borderColor":"#eb8146","borderWidth":1},"label":{"color":"rgb(137,52,72)"}},"itemStyle":{"areaColor":"#f3f3f3","borderColor":"#999999","borderWidth":0.5},"label":{"color":"#893448"}},"markPoint":{"emphasis":{"label":{"color":"#293441"}},"label":{"color":"#293441"}},"parallel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"pie":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"radar":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"circle","symbolSize":3},"sankey":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"scatter":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"textStyle":{},"timeAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":false},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":true}},"timeline":{"checkpointStyle":{"borderColor":"#fc97af","color":"#fc97af"},"controlStyle":{"borderColor":"#87f7cf","borderWidth":0.5,"color":"#87f7cf"},"emphasis":{"controlStyle":{"borderColor":"#87f7cf","borderWidth":0.5,"color":"#87f7cf"},"itemStyle":{"color":"#f7f494"},"label":{"color":"#87f7cf"}},"itemStyle":{"borderWidth":1,"color":"#87f7cf"},"label":{"color":"#87f7cf"},"lineStyle":{"color":"#87f7cf","width":1}},"title":{"subtextStyle":{"color":"#dddddd"},"textStyle":{"color":"#ffffff"}},"toolbox":{"emphasis":{"iconStyle":{"borderColor":"#666666"}},"iconStyle":{"borderColor":"#999999"}},"tooltip":{"axisPointer":{"crossStyle":{"color":"#cccccc","width":1},"lineStyle":{"color":"#cccccc","width":1}}},"valueAxis":{"axisLabel":{"color":"#aaaaaa","show":true},"axisLine":{"lineStyle":{"color":"#666666"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.05)","rgba(200,200,200,0.02)"]},"show":false},"splitLine":{"lineStyle":{"color":["#e6e6e6"]},"show":true}},"visualMap":{"color":["#fc97af","#87f7cf"]}},"lightTheme":{"backgroundColor":"rgba(0,0,0,0)","bar":{"itemStyle":{"barBorderColor":"#ccc","barBorderWidth":0}},"boxplot":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"candlestick":{"itemStyle":{"borderColor":"#d87a80","borderColor0":"#2ec7c9","borderWidth":1,"color":"#d87a80","color0":"#2ec7c9"}},"categoryAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":false},"splitLine":{"lineStyle":{"color":["#eee"]},"show":false}},"color":["#2ec7c9","#b6a2de","#5ab1ef","#ffb980","#d87a80","#8d98b3","#e5cf0d","#97b552","#95706d","#dc69aa","#07a2a4","#9a7fd1","#588dd5","#f5994e","#c05050","#59678c","#c9ab00","#7eb00a","#6f5553","#c14089"],"dataZoom":{"backgroundColor":"rgba(47,69,84,0)","dataBackgroundColor":"#efefff","fillerColor":"rgba(182,162,222,0.2)","handleColor":"#008acd","handleSize":"100%","textStyle":{"color":"#333333"}},"funnel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"gauge":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"geo":{"emphasis":{"itemStyle":{"areaColor":"rgba(254,153,78,1)","borderColor":"#444","borderWidth":1},"label":{"color":"rgb(100,0,0)"}},"itemStyle":{"areaColor":"#dddddd","borderColor":"#eeeeee","borderWidth":0.5},"label":{"color":"#d87a80"}},"graph":{"color":["#2ec7c9","#b6a2de","#5ab1ef","#ffb980","#d87a80","#8d98b3","#e5cf0d","#97b552","#95706d","#dc69aa","#07a2a4","#9a7fd1","#588dd5","#f5994e","#c05050","#59678c","#c9ab00","#7eb00a","#6f5553","#c14089"],"itemStyle":{"borderColor":"#ccc","borderWidth":0},"label":{"color":"#eeeeee"},"lineStyle":{"color":"#aaaaaa","width":1},"smooth":true,"symbol":"emptyCircle","symbolSize":3},"legend":{"textStyle":{"color":"#333333"}},"line":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"emptyCircle","symbolSize":5},"logAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":true},"splitLine":{"lineStyle":{"color":["#eee"]},"show":true}},"map":{"emphasis":{"itemStyle":{"areaColor":"rgba(254,153,78,1)","borderColor":"#444","borderWidth":1},"label":{"color":"rgb(100,0,0)"}},"itemStyle":{"areaColor":"#dddddd","borderColor":"#eeeeee","borderWidth":0.5},"label":{"color":"#d87a80"}},"markPoint":{"emphasis":{"label":{"color":"#eeeeee"}},"label":{"color":"#eeeeee"}},"parallel":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"pie":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"radar":{"itemStyle":{"borderWidth":1},"lineStyle":{"width":2},"smooth":true,"symbol":"emptyCircle","symbolSize":3},"sankey":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"scatter":{"itemStyle":{"borderColor":"#ccc","borderWidth":0}},"textStyle":{},"timeAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":false},"splitLine":{"lineStyle":{"color":["#eee"]},"show":true}},"timeline":{"checkpointStyle":{"borderColor":"#2ec7c9","color":"#2ec7c9"},"controlStyle":{"borderColor":"#008acd","borderWidth":0.5,"color":"#008acd"},"emphasis":{"controlStyle":{"borderColor":"#008acd","borderWidth":0.5,"color":"#008acd"},"itemStyle":{"color":"#a9334c"},"label":{"color":"#008acd"}},"itemStyle":{"borderWidth":1,"color":"#008acd"},"label":{"color":"#008acd"},"lineStyle":{"color":"#008acd","width":1}},"title":{"subtextStyle":{"color":"#aaaaaa"},"textStyle":{"color":"#008acd"}},"toolbox":{"emphasis":{"iconStyle":{"borderColor":"#18a4a6"}},"iconStyle":{"borderColor":"#2ec7c9"}},"tooltip":{"axisPointer":{"crossStyle":{"color":"#008acd","width":1},"lineStyle":{"color":"#008acd","width":1}}},"valueAxis":{"axisLabel":{"color":"#333","show":true},"axisLine":{"lineStyle":{"color":"#008acd"},"show":true},"axisTick":{"lineStyle":{"color":"#333"},"show":true},"splitArea":{"areaStyle":{"color":["rgba(250,250,250,0.3)","rgba(200,200,200,0.3)"]},"show":true},"splitLine":{"lineStyle":{"color":["#eee"]},"show":true}},"visualMap":{"color":["#5ab1ef","#e0ffff"]}}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-7":["id-7"],"id-8":["id-8"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
